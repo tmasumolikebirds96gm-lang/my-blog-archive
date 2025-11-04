@@ -1,27 +1,4 @@
 ---
 ---
 @import "minima";
-
-/* --- ここからカスタムスタイル --- */
-
-// サイト幅の上書き
-.wrapper {
-  max-width: 1200px !important;
-  width: 100%;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
-
-// 記事内の画像スタイル
-.post-content img, .article-body img { 
-  max-width: 100%; 
-  width: 750px; 
-  height: auto; 
-  display: block; 
-  margin-left: 0; 
-  margin-right: auto; 
-  margin-top: 2em; 
-  margin-bottom: 2em;
-}
-
-/* --- カスタムスタイルはここまで --- */
+@import "custom-style";
