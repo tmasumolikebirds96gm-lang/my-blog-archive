@@ -46,7 +46,7 @@ a {
   display: inline-block;
   width: 48px; // アイコンを少し大きく
   height: 48px;
-  background-image: url("/assets/icon.png");
+  background-image: url("{{ site.baseurl }}/assets/icon.png");
   background-size: cover;
   background-position: center;
   border-radius: 50%;
