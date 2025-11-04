@@ -66,5 +66,7 @@ social_media_list:
   - url: https://tmasumolikebirds96gm-lang.github.io/my-first-portfolio/
     icon: github
     username: ポートフォリオHPはこちら
- 
 
+# 以下の行を追加または修正します。
+# プロジェクトリポジトリ名を設定します。
+baseurl: "/my-blog-archive"
