@@ -48,7 +48,7 @@ a {
   display: inline-block;
   width: 48px; // アイコンを少し大きく
   height: 48px;
-  **background-image: url("/my-blog-archive/assets/icon.png");** // ← ★ baseurlの中身を直書きに修正しました
+  **background-image: url("/assets/icon.png");** // ← ★ パスをプロジェクト名なしのルート相対パスに修正
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -62,89 +62,4 @@ a {
 }
 
 // サイトタイトルの調整
-.site-title {
-  display: flex; // flexboxを使ってアイコンとタイトルをきれいに配置
-  align-items: center;
-  color: $text-color-dark;
-  font-weight: 700;
-  font-size: 2.2rem; // タイトルを少し大きく
-  line-height: 1;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  &:hover {
-    color: $main-color; // ホバーでメインカラーに
-  }
-}
-
-// サイトサブタイトルの調整
-.site-subtitle {
-  color: $text-color-light;
-  font-size: 0.95rem;
-  display: block;
-  margin-top: 0.3rem;
-  margin-left: 60px; // アイコンの横に揃えるための余白 (アイコンの幅+margin-rightより少し多めに)
-}
-
-// ナビゲーションリンクの調整
-.site-nav {
-  .page-link {
-    color: $text-color-light;
-    font-size: 1.05rem;
-    font-weight: 500;
-    margin-left: 20px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    &:hover {
-      color: #fff;
-      background-color: $main-color;
-      text-decoration: none;
-      transform: translateY(-2px); // 少し浮き上がるエフェクト
-      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-    }
-    // 現在のページへのリンクをハイライト (Minimaのデフォルト動作を利用)
-    &.active {
-      color: #fff;
-      background-color: $main-color;
-    }
-  }
-}
-
-// ページコンテンツの余白と背景色を調整
-.page-content {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: $background-light;
-  min-height: calc(100vh - 200px); // フッターとの間に最低限の高さを確保
-}
-
-// 記事一覧のヘディング
-.post-list-heading {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: $text-color-dark;
-  border-bottom: 2px solid $main-color; // メインカラーの区切り線
-  padding-bottom: 0.8rem;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-}
-
-// 各記事のリストアイテムのスタイル
-.post-list li {
-  margin-bottom: 2rem;
-  background-color: #fff;
-  border: 1px solid $border-color;
-  border-radius: 8px;
-  padding: 20px 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  &:hover {
-    transform: translateY(-5px); // 少し浮き上がるエフェクト
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.post-list .post-meta {
-  color: $text-color-light;
-  font-size: 0.9rem;
-  margin-top:
+.site-title
