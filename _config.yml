@@ -11,65 +11,54 @@
 # If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
-#
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-description: >- # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+title: 日々鳥景アーカイブ
+subtitle:
+description: >- # This means to ignore newlines until "baseurl:"
+  # ここにブログの説明文を記述します。
+baseurl: "/my-blog-archive" # ⭐【修正点】リポジトリ名に設定。デザイン適用に必須。
+url: "https://tmasumolikebirds96gm-lang.github.io" # ⭐【修正点】GitHub PagesのルートURLを設定（アカウント名に注意）。
 
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+  - jekyll-feed
+#  - jekyll-sitemap # 必要に応じてコメントアウトを解除
 
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
 # the internal "default list".
 #
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
 # exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
 
 # Header pages
 header_pages:
-
-  - title: 記事一覧
-    url: /posts/
-  - title: タグ一覧  # <-- これを追加
-    url: /tags/    # <-- これを追加
-  - title: プロフィール
-    url: /about/
-
-title: 日々鳥景アーカイブ
-subtitle:
-description: >- # This means to ignore newlines until "baseurl:"
+  - title: 記事一覧
+    url: /posts/
+  - title: タグ一覧
+    url: /tags/
+  - title: プロフィール
+    url: /about/
 
 # Social media links
 social_media_list:
-  - url: https://tmasumolikebirds96gm-lang.github.io/my-first-portfolio/
-    icon: github
-    username: ポートフォリオHPはこちら
-
-# baseurl: "/my-blog-archive"  <-- 重複していた baseurl 設定は削除
-
-# 検索機能のための設定
-plugins:
-  - jekyll-feed
-# - jekyll-sitemap # <-- コメントアウト（行頭に#）
+  - url: https://tmasumolikebirds96gm-lang.github.io/my-first-portfolio/
+    icon: github
+    username: ポートフォリオHPはこちら
