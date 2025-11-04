@@ -1,3 +1,6 @@
+// 【 追加する1行目 】baseurlをSCSS変数として定義 (GitHub Pages対応のため)
+$baseurl: "{{ site.baseurl }}";
+
 // プロフェッショナルなサイトの配色定義
 $main-color: #007bff; // メインカラー (青)
 $main-color-dark: darken($main-color, 15%); // メインカラーの濃いバージョン
