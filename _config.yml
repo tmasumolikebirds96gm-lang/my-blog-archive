@@ -67,6 +67,4 @@ social_media_list:
     icon: github
     username: ポートフォリオHPはこちら
 
-# 以下の行を追加または修正します。
-# プロジェクトリポジトリ名を設定します。
 baseurl: "/my-blog-archive"

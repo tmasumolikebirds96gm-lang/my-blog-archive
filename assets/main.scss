@@ -2,12 +2,12 @@
 ---
 @import "minima";
 
-// サイトアイコンのパスをbaseurl対応に修正
-.site-icon {
-  background-image: url("{{ site.baseurl }}/assets/icon.png"); /* Liquidタグでbaseurlを考慮 */
-  width: 48px;
-  height: 48px;
-  margin-right: 12px;
+// ここにサイトのスタイル崩れを防ぐためのカスタムCSSを記述
+
+/* サイトアイコンのパス修正 */
+.site-header .site-icon {
+  // Minimaのセレクタに合わせて修正
+  background-image: url("{{ site.baseurl }}/assets/icon.png"); 
 }
 
 /* サイト幅の上書き */
