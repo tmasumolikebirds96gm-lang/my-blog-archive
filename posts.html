@@ -1,0 +1,21 @@
+---
+layout: default
+title: 記事一覧
+permalink: /posts/
+---
+
+<div class="posts-container">
+  <h1 class="post-list-heading">記事一覧</h1>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
