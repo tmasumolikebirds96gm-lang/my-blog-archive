@@ -2,15 +2,19 @@
 ---
 @import "minima";
 
-// ここにサイトのスタイル崩れを防ぐためのカスタムCSSを記述
+/* --- ここからカスタムスタイルとGitHub Pages対応 --- */
 
-/* サイトアイコンのパス修正 */
+// サイトアイコンのパスをbaseurl対応に修正
+// 以下のセレクタは、Minimaテーマのヘッダーにあるアイコン（もしあれば）を対象にします。
 .site-header .site-icon {
-  // Minimaのセレクタに合わせて修正
-  background-image: url("{{ site.baseurl }}/assets/icon.png"); 
+  background-image: url("{{ site.baseurl }}/assets/icon.png"); /* ✅ Liquidタグでbaseurlを考慮 */
+  width: 48px; 
+  height: 48px;
+  margin-right: 12px;
+  background-size: cover; /* アイコン画像がボックスに収まるように追加 */
 }
 
-/* サイト幅の上書き */
+// サイト幅の上書き（以前のカスタムを復活）
 .wrapper {
   max-width: 1200px !important;
   width: 100%;
@@ -18,7 +22,7 @@
   padding-right: 20px !important;
 }
 
-/* 記事内の画像スタイル */
+// 記事内の画像スタイル（以前のカスタムを復活）
 .post-content img, .article-body img { 
   max-width: 100%; 
   width: 750px; 
@@ -29,3 +33,5 @@
   margin-top: 2em; 
   margin-bottom: 2em;
 }
+
+/* --- カスタムスタイルはここまで --- */
