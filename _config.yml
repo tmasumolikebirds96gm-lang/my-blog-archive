@@ -66,5 +66,7 @@ social_media_list:
   - url: https://tmasumolikebirds96gm-lang.github.io/my-first-portfolio/
     icon: github
     username: ポートフォリオHPはこちら
+
+baseurl: "/my-blog-archive"
  
 
