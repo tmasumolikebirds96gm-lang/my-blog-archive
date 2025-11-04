@@ -21,14 +21,14 @@
 title: 日々鳥景アーカイブ
 subtitle:
 description: >- # This means to ignore newlines until "baseurl:"
-  この部分はconfig.ymlから編集できます
+この部分はconfig.ymlから編集できます
 baseurl: "/my-blog-archive" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+- jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -52,15 +52,15 @@ plugins:
 
 # Header pages
 header_pages:
-  - title: ホーム
-    url: /
-  - title: 記事一覧
-    url: /posts/
-  - title: プロフィール
-    url: /about/
+- title: ホーム
+url: /
+- title: 記事一覧
+url: /posts/
+- title: プロフィール
+url: /about/
     
 # Social media links
 social_media_list:
-  - url: https://tmasumolikebirds96gm-lang.github.io/my-first-portfolio/
-    icon: github
-    username: ポートフォリオHPはこちら
+- url: https://tmasumolikebirds96gm-lang.github.io/my-first-portfolio/
+icon: github
+username: ポートフォリオHPはこちら
