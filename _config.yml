@@ -73,3 +73,5 @@ social_media_list:
 plugins:
   - jekyll-feed
 # - jekyll-sitemap # <-- コメントアウト（行頭に#）
+
+baseurl: "/my-blog-archive"
