@@ -46,8 +46,10 @@ a {
   display: inline-block;
   width: 48px; 
   height: 48px;
-  /* 🔥 最終修正！/assets を削除しました。これでサーバーが探しているパスと一致します 🔥 */
-  background-image: url("{{ site.baseurl }}/icon.png");
+  
+  /* 🔥 最終修正！relative_url フィルターで baseurl を確実に適用します 🔥 */
+  /* icon.png は assets フォルダの直下にあります */
+  background-image: url('{{ "/assets/icon.png" | relative_url }}');
   
   background-size: cover;
   background-position: center;
@@ -85,7 +87,4 @@ a {
   margin-left: 60px; // アイコンの横に揃えるための余白 (アイコンの幅+margin-rightより少し多めに)
 }
 
-// ナビゲーションリンクの調整
-.site-nav {
-  .page-link {
-    color: $
+// ナビゲーションリンクの
