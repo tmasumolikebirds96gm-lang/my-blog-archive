@@ -44,9 +44,9 @@ a {
 // サイトアイコンのスタイル
 .site-icon {
   display: inline-block;
-  width: 48px; // アイコンを少し大きく
+  width: 48px; 
   height: 48px;
-  /* 🔥 この行だけが変更されました。Liquidタグを直接使います。 */
+  /* 🔥 これが正しい形式です 🔥 */
   background-image: url("{{ site.baseurl }}/assets/icon.png");
   background-size: cover;
   background-position: center;
