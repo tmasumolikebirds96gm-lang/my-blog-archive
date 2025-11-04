@@ -1,6 +1,3 @@
-// 【🔥 追加する1行目 🔥】baseurlをSCSS変数として定義 (GitHub Pages対応のため)
-$baseurl: "{{ site.baseurl }}";
-
 // プロフェッショナルなサイトの配色定義
 $main-color: #007bff; // メインカラー (青)
 $main-color-dark: darken($main-color, 15%); // メインカラーの濃いバージョン
@@ -12,257 +9,258 @@ $background-dark: #343a40; // 濃い背景色 (フッターなど)
 
 // サイト全体のフォントをNoto Sans JPに変更
 body {
-  font-family: 'Noto Sans JP', sans-serif;
-  color: $text-color-dark;
-  line-height: 1.6;
-  background-color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: $text-color-dark;
+  line-height: 1.6;
+  background-color: #fff;
 }
 
 // リンクの基本スタイル
 a {
-  color: $main-color;
-  text-decoration: none;
-  &:hover {
-    color: $main-color-dark;
-    text-decoration: underline;
-  }
+  color: $main-color;
+  text-decoration: none;
+  &:hover {
+    color: $main-color-dark;
+    text-decoration: underline;
+  }
 }
 
 // ヘッダーのスタイル調整
 .site-header {
-  border-bottom: 1px solid $border-color;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); // 影を強めて高級感を出す
-  padding: 1.5rem 0;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  z-index: 1000;
-  .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); // 影を強めて高級感を出す
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 // サイトアイコンのスタイル
 .site-icon {
-  display: inline-block;
-  width: 48px; // アイコンを少し大きく
-  height: 48px;
-  background-image: url('#{$baseurl}/assets/icon.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-right: 12px; // 間隔を調整
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15); // 影を強める
-  transition: transform 0.3s ease; // ホバーエフェクト
-  &:hover {
-    transform: scale(1.05); // 少し拡大
-  }
+  display: inline-block;
+  width: 48px; // アイコンを少し大きく
+  height: 48px;
+  /* 🔥 この行だけが変更されました。Liquidタグを直接使います。 */
+  background-image: url("{{ site.baseurl }}/assets/icon.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 12px; // 間隔を調整
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15); // 影を強める
+  transition: transform 0.3s ease; // ホバーエフェクト
+  &:hover {
+    transform: scale(1.05); // 少し拡大
+  }
 }
 
 // サイトタイトルの調整
 .site-title {
-  display: flex; // flexboxを使ってアイコンとタイトルをきれいに配置
-  align-items: center;
-  color: $text-color-dark;
-  font-weight: 700;
-  font-size: 2.2rem; // タイトルを少し大きく
-  line-height: 1;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  &:hover {
-    color: $main-color; // ホバーでメインカラーに
-  }
+  display: flex; // flexboxを使ってアイコンとタイトルをきれいに配置
+  align-items: center;
+  color: $text-color-dark;
+  font-weight: 700;
+  font-size: 2.2rem; // タイトルを少し大きく
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $main-color; // ホバーでメインカラーに
+  }
 }
 
 // サイトサブタイトルの調整
 .site-subtitle {
-  color: $text-color-light;
-  font-size: 0.95rem;
-  display: block;
-  margin-top: 0.3rem;
-  margin-left: 60px; // アイコンの横に揃えるための余白 (アイコンの幅+margin-rightより少し多めに)
+  color: $text-color-light;
+  font-size: 0.95rem;
+  display: block;
+  margin-top: 0.3rem;
+  margin-left: 60px; // アイコンの横に揃えるための余白 (アイコンの幅+margin-rightより少し多めに)
 }
 
 // ナビゲーションリンクの調整
 .site-nav {
-  .page-link {
-    color: $text-color-light;
-    font-size: 1.05rem;
-    font-weight: 500;
-    margin-left: 20px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    &:hover {
-      color: #fff;
-      background-color: $main-color;
-      text-decoration: none;
-      transform: translateY(-2px); // 少し浮き上がるエフェクト
-      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-    }
-    // 現在のページへのリンクをハイライト (Minimaのデフォルト動作を利用)
-    &.active {
-      color: #fff;
-      background-color: $main-color;
-    }
-  }
+  .page-link {
+    color: $text-color-light;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-left: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    &:hover {
+      color: #fff;
+      background-color: $main-color;
+      text-decoration: none;
+      transform: translateY(-2px); // 少し浮き上がるエフェクト
+      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    }
+    // 現在のページへのリンクをハイライト (Minimaのデフォルト動作を利用)
+    &.active {
+      color: #fff;
+      background-color: $main-color;
+    }
+  }
 }
 
 // ページコンテンツの余白と背景色を調整
 .page-content {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: $background-light;
-  min-height: calc(100vh - 200px); // フッターとの間に最低限の高さを確保
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: $background-light;
+  min-height: calc(100vh - 200px); // フッターとの間に最低限の高さを確保
 }
 
 // 記事一覧のヘディング
 .post-list-heading {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: $text-color-dark;
-  border-bottom: 2px solid $main-color; // メインカラーの区切り線
-  padding-bottom: 0.8rem;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $text-color-dark;
+  border-bottom: 2px solid $main-color; // メインカラーの区切り線
+  padding-bottom: 0.8rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 // 各記事のリストアイテムのスタイル
 .post-list li {
-  margin-bottom: 2rem;
-  background-color: #fff;
-  border: 1px solid $border-color;
-  border-radius: 8px;
-  padding: 20px 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  &:hover {
-    transform: translateY(-5px); // 少し浮き上がるエフェクト
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  }
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-5px); // 少し浮き上がるエフェクト
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .post-list .post-meta {
-  color: $text-color-light;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  color: $text-color-light;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 .post-list h3 {
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
-  font-size: 1.6rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
 }
 
 .post-list .post-link {
-  color: $text-color-dark;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  &:hover {
-    color: $main-color;
-    text-decoration: none; // ホバー時に下線が出ないように
-  }
+  color: $text-color-dark;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $main-color;
+    text-decoration: none; // ホバー時に下線が出ないように
+  }
 }
 
 // フッターのスタイル調整
 .site-footer {
-  border-top: 1px solid $border-color;
-  padding: 4rem 0;
-  background-color: $background-dark; // 濃い背景色
-  color: #dee2e6; // 明るいテキスト色
-  .wrapper {
-    text-align: center;
-  }
+  border-top: 1px solid $border-color;
+  padding: 4rem 0;
+  background-color: $background-dark; // 濃い背景色
+  color: #dee2e6; // 明るいテキスト色
+  .wrapper {
+    text-align: center;
+  }
 }
 
 // フッターのリンク
 .site-footer a {
-  color: #adb5bd; // フッター内のリンク色
-  text-decoration: none;
-  &:hover {
-    color: $main-color;
-  }
+  color: #adb5bd; // フッター内のリンク色
+  text-decoration: none;
+  &:hover {
+    color: $main-color;
+  }
 }
 
 // ページタイトル (個別記事ページなど)
 .page-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: $text-color-dark;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  border-bottom: 2px solid $main-color;
-  padding-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-color-dark;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid $main-color;
+  padding-bottom: 1rem;
 }
 
 // 個別記事のタイトル
 .post-header .post-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: $text-color-dark;
-  margin-bottom: 0.5rem;
-  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: $text-color-dark;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 // 個別記事のメタ情報
 .post-header .post-meta {
-  font-size: 1rem;
-  color: $text-color-light;
-  text-align: center;
-  margin-bottom: 2rem;
-  border-bottom: 1px dashed $border-color;
-  padding-bottom: 1.5rem;
+  font-size: 1rem;
+  color: $text-color-light;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px dashed $border-color;
+  padding-bottom: 1.5rem;
 }
 
 // 個別
 
 /* =========================================
-   サイト幅の上書き (ユーザー修正箇所)
-   ========================================= */
+   サイト幅の上書き (ユーザー修正箇所)
+   ========================================= */
 
 // コンテンツ全体の幅を広げるための設定
 .wrapper {
-    // 既存のmax-width設定を上書きし、より広い幅を適用
-    max-width: 1200px !important; /* ← 1200pxに広げる (数値を調整可能) */
-    width: 100%; /* 親要素の幅を最大限利用 */
-    // 左右のパディングを適度に設定し、コンテンツが端に寄りすぎないようにする
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    // 既存のmax-width設定を上書きし、より広い幅を適用
+    max-width: 1200px !important; /* ← 1200pxに広げる (数値を調整可能) */
+    width: 100%; /* 親要素の幅を最大限利用 */
+    // 左右のパディングを適度に設定し、コンテンツが端に寄りすぎないようにする
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 
 // ページコンテンツの左右のパディングも、.wrapperの設定に依存させるため調整
 .page-content {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* 記事内の画像に適用するスタイル */
-.post-content img, 
-.article-body img { 
-    
-    /* -------------------------------------- */
-    /* 修正箇所 */
-    /* -------------------------------------- */
-    
-    /* 1. レスポンシブ対応: 親要素の幅を超えないようにする */
-    max-width: 100%; 
-    
-    /* 2. PCでの最大表示幅をさらに小さく設定（例: 750px）*/
-    width: 750px; /* ← 900pxから750pxに縮小 */
-    
-    /* 3. アスペクト比を維持 */
-    height: auto; 
-    
-    /* 4. 中央寄せを解除し、左寄せにする */
-    display: block; 
-    margin-left: 0; /* ← autoから0に変更 */
-    margin-right: auto; /* ← 右側のマージンはautoのままで、左寄せを確定 */
-    
-    /* 5. 記事本文と画像の間隔を調整 */
-    margin-top: 2em; 
-    margin-bottom: 2em;
+.post-content img, 
+.article-body img { 
+    
+    /* -------------------------------------- */
+    /* 修正箇所 */
+    /* -------------------------------------- */
+    
+    /* 1. レスポンシブ対応: 親要素の幅を超えないようにする */
+    max-width: 100%; 
+    
+    /* 2. PCでの最大表示幅をさらに小さく設定（例: 750px）*/
+    width: 750px; /* ← 900pxから750pxに縮小 */
+    
+    /* 3. アスペクト比を維持 */
+    height: auto; 
+    
+    /* 4. 中央寄せを解除し、左寄せにする */
+    display: block; 
+    margin-left: 0; /* ← autoから0に変更 */
+    margin-right: auto; /* ← 右側のマージンはautoのままで、左寄せを確定 */
+    
+    /* 5. 記事本文と画像の間隔を調整 */
+    margin-top: 2em; 
+    margin-bottom: 2em;
 }
