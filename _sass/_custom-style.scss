@@ -41,6 +41,23 @@ a {
   }
 }
 
+// サイトアイコンのスタイル
+.site-icon {
+  display: inline-block;
+  width: 48px; // アイコンを少し大きく
+  height: 48px;
+  background-image: url("/assets/icon.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 12px; // 間隔を調整
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15); // 影を強める
+  transition: transform 0.3s ease; // ホバーエフェクト
+  &:hover {
+    transform: scale(1.05); // 少し拡大
+  }
+}
 
 // サイトタイトルの調整
 .site-title {
