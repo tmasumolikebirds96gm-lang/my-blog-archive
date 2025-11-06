@@ -13,6 +13,11 @@ body {
   color: $text-color-dark;
   line-height: 1.6;
   background-color: #fff;
+  margin: 0; // ページの最上部の余白を削除 (黒線対策1)
+  
+  /* ✨ 【追加箇所 1】: 不要な記号やスクロールバーを非表示にする試み */
+  overflow-x: hidden; /* 横方向のスクロールバーを非表示にし、横方向のオーバーフローを隠す */
+  overflow-y: scroll; /* 縦方向のスクロールバーは表示を維持 */
 }
 
 // リンクの基本スタイル
@@ -28,8 +33,9 @@ a {
 // ヘッダーのスタイル調整
 .site-header {
   border-bottom: 1px solid $border-color;
+  border-top: none; // ヘッダー上部の罫線を削除 (黒線対策2)
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); // 影を強めて高級感を出す
-  padding: 1.5rem 0;
+  padding: 1rem 0; // 【コンパクト化】: 上下のパディングを減らしてヘッダーをコンパクトに
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -215,11 +221,10 @@ a {
   padding-bottom: 1.5rem;
 }
 
-// 個別
 
 /* =========================================
-   サイト幅の上書き (ユーザー修正箇所)
-   ========================================= */
+    サイト幅の上書き (ユーザー修正箇所)
+    ========================================= */
 
 // コンテンツ全体の幅を広げるための設定
 .wrapper {
@@ -262,4 +267,98 @@ a {
     /* 5. 記事本文と画像の間隔を調整 */
     margin-top: 2em; 
     margin-bottom: 2em;
+}
+
+
+/* --------------------------------------
+    🌟 ヘッダーの無断転載禁止表示スタイル 🌟
+    -------------------------------------- */
+.copyright-notice {
+  // wrapper内でナビゲーションとタイトルと並列に配置し、中央に寄せる
+  display: flex; 
+  align-items: center;
+  margin-left: 20px; 
+  margin-right: auto; // ナビゲーションの前にスペースを空ける
+}
+
+.no-reprint-text {
+  // 注意を引くためのスタイル
+  font-size: 1.0rem; // 文字サイズ
+  font-weight: 700; // 太字
+  color: red; // **目立つように赤色**
+  background-color: #fff3f3; // 薄い赤の背景
+  padding: 5px 10px; // 内側の余白
+  border-radius: 5px; // 角を丸く
+  border: 1px solid red; // 赤い枠線
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
+}
+
+// スマートフォンなどの画面幅が狭い場合の調整（任意）
+@media screen and (max-width: 800px) {
+  .copyright-notice {
+    display: none; // 画面が狭い場合は非表示にする
+  }
+}
+
+/* --------------------------------------
+    🌟 フッターリンクのレイアウト修正 🌟
+    -------------------------------------- */
+.footer-links {
+  // リンクを中央に集める
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; // 著作権表示との間に少し余白
+  padding-top: 10px; // 上部に少しパディング
+}
+
+.footer-links a {
+  // 各リンク間のスペースを調整
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 15px; // リンク間に左右15pxのスペース
+  white-space: nowrap; // リンクが途中で改行されないように
+  color: #adb5bd; // リンクの色をフッターテキストと合わせて見やすく
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $main-color; // ホバー時にメインカラーに
+  }
+}
+
+/* --------------------------------------
+    フッターテキストのスタイル調整（非リンク用） 
+    -------------------------------------- */
+.footer-text {
+  // フッター内の他のリンクと同じ明るい色を指定
+  color: #adb5bd; 
+  // リンクに見えないように下線を適用しない
+  text-decoration: none; 
+  // リンクと並べるための基本的な設定
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 15px;
+  white-space: nowrap;
+}
+
+// 著作権テキストも中央に寄せる（既に寄っているはずですが念のため）
+.copyright-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* --------------------------------------
+    🌟 左上のハンバーガーメニューの残骸を完全に非表示にする 🌟
+    -------------------------------------- */
+
+/* ナビゲーションのチェックボックス、ラベル、およびメニューアイコン全体を非表示にする */
+.site-nav input[type="checkbox"], 
+.site-nav label[for="nav-trigger"],
+.site-nav .menu-icon {
+    display: none !important; 
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
