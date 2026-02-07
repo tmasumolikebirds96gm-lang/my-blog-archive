@@ -362,3 +362,127 @@ a {
     margin: 0;
     padding: 0;
 }
+
+/* =========================================
+   ホーム画面 (写真メイン) スタイル
+   ========================================= */
+
+.custom-home {
+    padding: 0; 
+    background-color: #f0f0f0; 
+}
+
+.home-header {
+    position: relative;
+    height: 60vh; 
+    overflow: hidden;
+    margin-bottom: 4rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-header .main-visual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(0.6); 
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+}
+
+.header-title {
+    font-size: 4rem; 
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.header-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+}
+
+.button-primary {
+    display: inline-block;
+    background-color: $main-color; 
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+.button-primary:hover {
+    background-color: $main-color-dark; 
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.button-primary span {
+    margin-left: 8px;
+    transition: margin-left 0.2s ease;
+}
+.button-primary:hover span {
+    margin-left: 12px;
+}
+
+.home-intro {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-top: -6rem; 
+    position: relative;
+    z-index: 20;
+    text-align: left;
+}
+
+.intro-heading {
+    font-size: 2rem;
+    color: $text-color-dark;
+    border-bottom: 3px solid $main-color;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.intro-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.more-info-link {
+    text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+    .home-header {
+        height: 50vh;
+    }
+    .header-title {
+        font-size: 2.5rem;
+    }
+    .header-subtitle {
+        font-size: 1.2rem;
+    }
+    .home-intro {
+        margin-top: -4rem;
+    }
+}

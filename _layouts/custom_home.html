@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="custom-home">
+    <header class="home-header">
+        <img src="{{ '/assets/home.jpg' | relative_url }}" alt="日々鳥景アーカイブ メインビジュアル" class="main-visual-img">
+        <div class="header-overlay">
+            <h1 class="header-title">{{ site.title }}</h1>
+            <p class="header-subtitle">
+                {% if site.description %}{{ site.description | escape }}{% else %}鳥と風景の美しいデジタルアーカイブ{% endif %}
+            </p>
+            <a href="{{ '/posts/' | relative_url }}" class="button-primary">全ての記事を見る <span>&rarr;</span></a>
+        </div>
+    </header>
+
+    <div class="wrapper home-intro">
+        <h2 class="intro-heading">このサイトについて</h2>
+        <div class="intro-content">
+            <p><strong>日々鳥景アーカイブ</strong>へようこそ。</p>
+            <p>
+                ここは、私が日々の生活の中で出会った美しい鳥たちや、その背景にある壮大な自然の風景を記録し、保管していくデジタルアーカイブです。
+                一瞬の出会いを切り取った写真と、それにまつわる物語を綴っています。
+                過去の記録を掘り起こし、未来へ残していくことを目指しています。
+            </p>
+            <p class="more-info-link">
+                <a href="{{ '/about/' | relative_url }}">詳細なプロフィールはこちら &rsaquo;</a>
+            </p>
+        </div>
+    </div>
+</div>
