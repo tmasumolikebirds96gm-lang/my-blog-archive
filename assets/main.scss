@@ -4,41 +4,55 @@
 @import "minima";
 @import "custom-style";
 
-/* 画像で起きている「右側に文章が吸い込まれる現象」を解決するコード 
-*/
+/* --- レイアウト崩れ解決コード（PC・スマホ両対応） --- */
 
-/* 1. 「このサイトについて」のブロックを強制的に新しい行（一番左）から始める */
+/* 1. 「このサイトについて」のブロックが他の要素に食い込まないようにする */
 .home-intro {
-  clear: both !important;  /* 前の要素の回り込みを強制解除 */
-  display: block !important;
-  width: 100% !important;  /* 横幅をフルサイズに */
-  padding: 40px 0;         /* 上下に適切な余白を作る */
-  margin: 0;
-}
-
-/* 2. 見出しを左端に揃えて独立させる */
-.intro-heading {
   clear: both;
   display: block;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.8rem;       /* PC・スマホで見栄えの良いサイズ */
+  width: 100%;
+  margin: 30px 0;
+  padding: 0;
 }
 
-/* 3. 文章部分の余白と改行を確保 */
-.intro-content {
+/* 2. 文章の改行と余白をしっかり作る */
+.intro-heading {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
   display: block;
-  width: 100%;
+  clear: both;
 }
 
 .intro-content p {
-  margin-bottom: 1.5em;    /* 段落ごとの隙間 */
-  line-height: 1.8;        /* 行間を広げる */
+  margin-bottom: 1.5em !important; /* 段落の後の隙間（改行に見える部分） */
+  line-height: 1.7;                /* 行間を広げる */
   display: block;
 }
 
-/* 4. 詳細リンクの調整 */
-.more-info-link {
-  display: block;
-  margin-top: 20px;
+/* 3. スマホ表示（画面幅が狭い時）の微調整 */
+@media screen and (max-width: 600px) {
+  /* スマホの時はwrapperの幅に合わせる */
+  .home-intro {
+    padding: 0 15px; 
+    box-sizing: border-box; /* 枠からはみ出さないようにする */
+  }
+
+  /* 文字が大きすぎると崩れるので調整 */
+  .intro-heading {
+    font-size: 1.3rem;
+  }
+
+  /* 他の要素（ヘッダーなど）がスマホで横に突き抜けるのを防止 */
+  .site-header .wrapper, .site-nav, .site-title {
+    float: none !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  
+  .site-nav .trigger {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
