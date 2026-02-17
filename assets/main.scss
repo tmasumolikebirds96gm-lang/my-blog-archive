@@ -1,91 +1,44 @@
-
 ---
 ---
 
 @import "minima";
 @import "custom-style";
 
-/* --- ここから下にスマホ用の修正コードを追加しました --- */
+/* 画像で起きている「右側に文章が吸い込まれる現象」を解決するコード 
+*/
 
-/* 画面の横幅が600px以下（スマホ）になった時の設定 */
-@media screen and (max-width: 600px) {
-
-  /* 1. ヘッダー全体を中央に寄せ、縦に並べる */
-  .site-header .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-  }
-
-  /* 2. サイトタイトルとサブタイトルを調整 */
-  .site-title {
-    display: block;
-    float: none;           /* Minimaの横並び設定を解除 */
-    text-align: center;
-    margin-right: 0 !important;
-    font-size: 1.2rem;     /* 文字を少し小さく */
-    white-space: normal;   /* 長い場合に折り返す */
-  }
-
-  .site-subtitle {
-    display: block;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 5px;
-  }
-
-  /* 3. メニュー（ナビゲーション）を調整 */
-  .site-nav {
-    position: static;      /* 固定位置を解除 */
-    float: none;           /* 横並びを解除 */
-    margin-top: 15px;      /* タイトルとの隙間 */
-    border: none;
-  }
-
-  .site-nav .trigger {
-    display: flex;         /* リンクを並べる */
-    flex-wrap: wrap;       /* 溢れたら改行 */
-    justify-content: center;
-    gap: 15px;             /* リンク同士の適度な間隔 */
-  }
-
-  .site-nav .page-link {
-    margin: 0 !important;  /* 余計な隙間を消す */
-    padding: 5px;
-    line-height: 1.5;
-  }
-
-  /* 4
-
-/* 「このサイトについて」のブロックを独立させる */
+/* 1. 「このサイトについて」のブロックを強制的に新しい行（一番左）から始める */
 .home-intro {
-  clear: both;           /* 前の要素（ヘッダー等）の回り込みを完全に解除 */
-  display: block;        /* 確実にブロックとして扱う */
-  width: 100%;           /* 横幅いっぱいに広げる */
-  padding: 40px 0;       /* 上下にしっかり余白を作る */
-  margin: 0 auto;        /* 中央寄せ */
+  clear: both !important;  /* 前の要素の回り込みを強制解除 */
+  display: block !important;
+  width: 100% !important;  /* 横幅をフルサイズに */
+  padding: 40px 0;         /* 上下に適切な余白を作る */
+  margin: 0;
 }
 
-/* 見出しの下に隙間を作る */
+/* 2. 見出しを左端に揃えて独立させる */
 .intro-heading {
-  margin-top: 0;
-  margin-bottom: 25px;   /* 文章との間隔を空ける */
-  font-size: 1.8rem;     /* PCで見栄えの良いサイズ */
-  border-bottom: 1px solid #eee; /* 区切り線（お好みで） */
-  padding-bottom: 10px;
-}
-
-/* 文章（段落）ごとの改行と余白を正しく出す */
-.intro-content p {
-  display: block;        /* 段落を独立させる */
-  margin-bottom: 1.5em;  /* 次の行との間隔（これが改行に見える重要設定） */
-  line-height: 1.8;      /* 行間を広げて読みやすくする */
-  color: #333;           /* 文字色を少し濃くして読みやすく */
-}
-
-/* 詳細リンクの位置調整 */
-.more-info-link {
-  margin-top: 20px;
+  clear: both;
   display: block;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;       /* PC・スマホで見栄えの良いサイズ */
+}
+
+/* 3. 文章部分の余白と改行を確保 */
+.intro-content {
+  display: block;
+  width: 100%;
+}
+
+.intro-content p {
+  margin-bottom: 1.5em;    /* 段落ごとの隙間 */
+  line-height: 1.8;        /* 行間を広げる */
+  display: block;
+}
+
+/* 4. 詳細リンクの調整 */
+.more-info-link {
+  display: block;
+  margin-top: 20px;
 }
