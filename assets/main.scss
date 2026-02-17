@@ -4,7 +4,9 @@
 @import "minima";
 @import "custom-style";
 
-/* --- 1. PC版：改行と回り込みの解決 --- */
+/* ==========================================
+   1. PC版：改行と回り込みの解決
+   ========================================== */
 .home-intro {
   clear: both !important;
   display: block;
@@ -18,59 +20,66 @@
   line-height: 1.8;
 }
 
-/* --- 2. スマホ版：タイトルとメニューの重なりを解消 --- */
+/* ==========================================
+   2. スマホ版：ズレ・重なり・ハミ出しを完全修正
+   ========================================== */
 @media screen and (max-width: 600px) {
   
-  /* ヘッダーの高さ制限を解除して、中身が重ならないようにする */
-  .site-header {
-    border-top: none;
-    min-height: auto !important; /* 高さを自動調整に */
-    position: relative;
+  /* 画面全体の横揺れを防止 */
+  html, body {
+    overflow-x: hidden;
   }
 
+  /* ヘッダー：右寄りを直して中央に揃える */
   .site-header .wrapper {
-    display: flex;
-    flex-direction: column; /* 縦に並べる */
-    align-items: center;
-    padding: 15px 0;
+    padding: 20px 10px !important;
     min-height: auto !important;
-  }
-
-  /* タイトルの重なり防止 */
-  .site-title {
-    position: static !important; /* 浮かせない */
-    float: none !important;
-    margin: 0 0 10px 0 !important;
-    text-align: center;
-    width: 100%;
-  }
-
-  /* メニュー（記事一覧・タグなど）の重なり防止 */
-  .site-nav {
-    position: static !important; /* 浮かせない */
-    float: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
-    width: 100%;
-    background-color: transparent;
-    border: none;
   }
 
-  /* メニュー項目を横に並べて中央寄せ */
+  /* サイトタイトル：位置を固定せず中央へ */
+  .site-title {
+    position: static !important;
+    float: none !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 0 10px 0 !important;
+    font-size: 1.4rem !important;
+  }
+
+  /* メニュー：タイトルの下に並べる */
+  .site-nav {
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
   .site-nav .trigger {
     display: flex !important;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0;
-    gap: 15px;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
   }
 
-  .site-nav .page-link {
-    margin: 0 !important;
-    padding: 5px 0;
+  /* 画像：画面からはみ出さないように強制 */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 10px auto !important; /* 画像を中央に */
   }
 
-  /* ハンバーガーメニュー（三本線）が出る設定なら隠す（今回はリンク直出し用） */
-  .site-nav .menu-icon {
-    display: none;
+  /* 「このサイトについて」等のコンテンツ幅調整 */
+  .wrapper {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
