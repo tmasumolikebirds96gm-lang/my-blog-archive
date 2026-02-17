@@ -57,3 +57,35 @@
   }
 
   /* 4
+
+/* 「このサイトについて」のブロックを独立させる */
+.home-intro {
+  clear: both;           /* 前の要素（ヘッダー等）の回り込みを完全に解除 */
+  display: block;        /* 確実にブロックとして扱う */
+  width: 100%;           /* 横幅いっぱいに広げる */
+  padding: 40px 0;       /* 上下にしっかり余白を作る */
+  margin: 0 auto;        /* 中央寄せ */
+}
+
+/* 見出しの下に隙間を作る */
+.intro-heading {
+  margin-top: 0;
+  margin-bottom: 25px;   /* 文章との間隔を空ける */
+  font-size: 1.8rem;     /* PCで見栄えの良いサイズ */
+  border-bottom: 1px solid #eee; /* 区切り線（お好みで） */
+  padding-bottom: 10px;
+}
+
+/* 文章（段落）ごとの改行と余白を正しく出す */
+.intro-content p {
+  display: block;        /* 段落を独立させる */
+  margin-bottom: 1.5em;  /* 次の行との間隔（これが改行に見える重要設定） */
+  line-height: 1.8;      /* 行間を広げて読みやすくする */
+  color: #333;           /* 文字色を少し濃くして読みやすく */
+}
+
+/* 詳細リンクの位置調整 */
+.more-info-link {
+  margin-top: 20px;
+  display: block;
+}
