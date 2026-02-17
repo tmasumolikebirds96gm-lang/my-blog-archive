@@ -1,5 +1,59 @@
+
 ---
 ---
 
 @import "minima";
 @import "custom-style";
+
+/* --- ここから下にスマホ用の修正コードを追加しました --- */
+
+/* 画面の横幅が600px以下（スマホ）になった時の設定 */
+@media screen and (max-width: 600px) {
+
+  /* 1. ヘッダー全体を中央に寄せ、縦に並べる */
+  .site-header .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  /* 2. サイトタイトルとサブタイトルを調整 */
+  .site-title {
+    display: block;
+    float: none;           /* Minimaの横並び設定を解除 */
+    text-align: center;
+    margin-right: 0 !important;
+    font-size: 1.2rem;     /* 文字を少し小さく */
+    white-space: normal;   /* 長い場合に折り返す */
+  }
+
+  .site-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+  }
+
+  /* 3. メニュー（ナビゲーション）を調整 */
+  .site-nav {
+    position: static;      /* 固定位置を解除 */
+    float: none;           /* 横並びを解除 */
+    margin-top: 15px;      /* タイトルとの隙間 */
+    border: none;
+  }
+
+  .site-nav .trigger {
+    display: flex;         /* リンクを並べる */
+    flex-wrap: wrap;       /* 溢れたら改行 */
+    justify-content: center;
+    gap: 15px;             /* リンク同士の適度な間隔 */
+  }
+
+  .site-nav .page-link {
+    margin: 0 !important;  /* 余計な隙間を消す */
+    padding: 5px;
+    line-height: 1.5;
+  }
+
+  /* 4
