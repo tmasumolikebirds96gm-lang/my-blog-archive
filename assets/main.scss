@@ -4,55 +4,72 @@
 @import "minima";
 @import "custom-style";
 
-/* --- レイアウト崩れ解決コード（PC・スマホ両対応） --- */
-
-/* 1. 「このサイトについて」のブロックが他の要素に食い込まないようにする */
+/* ==========================================
+   1. PC・スマホ共通：文章の「改行」と「余白」を直す
+   ========================================== */
 .home-intro {
-  clear: both;
+  clear: both;        /* 回り込み（重なり）を防止 */
   display: block;
-  width: 100%;
-  margin: 30px 0;
-  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-/* 2. 文章の改行と余白をしっかり作る */
 .intro-heading {
-  margin-top: 20px;
+  display: block;
   margin-bottom: 15px;
   font-size: 1.5rem;
-  display: block;
-  clear: both;
+  font-weight: bold;
 }
 
+/* 段落ごとにしっかり隙間を空ける（改行に見せる） */
 .intro-content p {
-  margin-bottom: 1.5em !important; /* 段落の後の隙間（改行に見える部分） */
-  line-height: 1.7;                /* 行間を広げる */
-  display: block;
+  display: block !important;
+  margin-bottom: 1.6em !important; 
+  line-height: 1.8;
 }
 
-/* 3. スマホ表示（画面幅が狭い時）の微調整 */
+/* ==========================================
+   2. スマホ専用：レイアウトが外に飛び出さない設定
+   ========================================== */
 @media screen and (max-width: 600px) {
-  /* スマホの時はwrapperの幅に合わせる */
-  .home-intro {
-    padding: 0 15px; 
-    box-sizing: border-box; /* 枠からはみ出さないようにする */
+  
+  /* 全ての要素が画面幅を超えないようにするお守り */
+  * {
+    box-sizing: border-box;
   }
 
-  /* 文字が大きすぎると崩れるので調整 */
-  .intro-heading {
-    font-size: 1.3rem;
-  }
-
-  /* 他の要素（ヘッダーなど）がスマホで横に突き抜けるのを防止 */
-  .site-header .wrapper, .site-nav, .site-title {
-    float: none !important;
+  /* 記事全体を包む枠に余裕を持たせる */
+  .wrapper {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
     width: 100% !important;
+  }
+
+  /* ヘッダー周りの崩れを防止 */
+  .site-title {
+    font-size: 1.2rem !important;
+    float: none !important;
+    display: block !important;
     text-align: center;
   }
-  
+
+  .site-nav {
+    float: none !important;
+    text-align: center;
+    border: none !important;
+    background: transparent !important;
+  }
+
   .site-nav .trigger {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* 画像が画面を突き抜けるのを防ぐ */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
