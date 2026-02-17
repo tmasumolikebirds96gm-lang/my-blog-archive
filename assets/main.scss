@@ -4,72 +4,73 @@
 @import "minima";
 @import "custom-style";
 
-/* ==========================================
-   1. PC・スマホ共通：文章の「改行」と「余白」を直す
-   ========================================== */
+/* --- 1. PC版：改行と回り込みの解決 --- */
 .home-intro {
-  clear: both;        /* 回り込み（重なり）を防止 */
+  clear: both !important;
   display: block;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 40px auto;
+  width: 100%;
 }
 
-.intro-heading {
-  display: block;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* 段落ごとにしっかり隙間を空ける（改行に見せる） */
 .intro-content p {
   display: block !important;
-  margin-bottom: 1.6em !important; 
+  margin-bottom: 1.6em !important;
   line-height: 1.8;
 }
 
-/* ==========================================
-   2. スマホ専用：レイアウトが外に飛び出さない設定
-   ========================================== */
+/* --- 2. スマホ版：タイトルとメニューの重なりを解消 --- */
 @media screen and (max-width: 600px) {
   
-  /* 全ての要素が画面幅を超えないようにするお守り */
-  * {
-    box-sizing: border-box;
+  /* ヘッダーの高さ制限を解除して、中身が重ならないようにする */
+  .site-header {
+    border-top: none;
+    min-height: auto !important; /* 高さを自動調整に */
+    position: relative;
   }
 
-  /* 記事全体を包む枠に余裕を持たせる */
-  .wrapper {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    width: 100% !important;
-  }
-
-  /* ヘッダー周りの崩れを防止 */
-  .site-title {
-    font-size: 1.2rem !important;
-    float: none !important;
-    display: block !important;
-    text-align: center;
-  }
-
-  .site-nav {
-    float: none !important;
-    text-align: center;
-    border: none !important;
-    background: transparent !important;
-  }
-
-  .site-nav .trigger {
+  .site-header .wrapper {
     display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center;
+    padding: 15px 0;
+    min-height: auto !important;
+  }
+
+  /* タイトルの重なり防止 */
+  .site-title {
+    position: static !important; /* 浮かせない */
+    float: none !important;
+    margin: 0 0 10px 0 !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* メニュー（記事一覧・タグなど）の重なり防止 */
+  .site-nav {
+    position: static !important; /* 浮かせない */
+    float: none !important;
+    margin: 0 !important;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+  }
+
+  /* メニュー項目を横に並べて中央寄せ */
+  .site-nav .trigger {
+    display: flex !important;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    padding: 0;
+    gap: 15px;
   }
 
-  /* 画像が画面を突き抜けるのを防ぐ */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
+  .site-nav .page-link {
+    margin: 0 !important;
+    padding: 5px 0;
+  }
+
+  /* ハンバーガーメニュー（三本線）が出る設定なら隠す（今回はリンク直出し用） */
+  .site-nav .menu-icon {
+    display: none;
   }
 }
