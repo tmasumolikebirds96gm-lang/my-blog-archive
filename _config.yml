@@ -1,15 +1,13 @@
-title: "日々鳥景アーカイブ"
-description: "鳥と風景のデジタルアーカイブ"
+title: "豊福雅哉の「日々鳥景アーカイブ」"
+author: "豊福雅哉"
+description: "豊福雅哉による野鳥と風景のデジタルアーカイブ。日々の散歩で出会う生き物や生物の観察記録、保護鳥との暮らしを写真と共に綴る日記です。"
 
-baseurl: "/my-blog-archive" 
+keywords: "豊福雅哉, 野鳥, 風景, 散歩, 生き物, 生物, 日記, 写真, アーカイブ"
+
+baseurl: "/toyofuku-masaya-archive"
 url: "https://tmasumolikebirds96gm-lang.github.io"
 
 theme: minima
 plugins:
   - jekyll-feed
-
-header_pages:
-  - index.html
-  - archive.html
-  - tags.html
-  - profile.html
+  - jekyll-seo-tag
