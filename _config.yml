@@ -1,8 +1,8 @@
 title: "日々鳥景アーカイブ"
 description: "鳥と風景のデジタルアーカイブ"
-# ローカルテスト時は空にするのが最も安全です
-baseurl: ""
-url: ""
+
+baseurl: "/my-blog-archive" 
+url: "https://tmasumolikebirds96gm-lang.github.io"
 
 theme: minima
 plugins:
