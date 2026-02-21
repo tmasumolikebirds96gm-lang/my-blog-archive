@@ -1,33 +1,16 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-  
+<footer class="site-footer">
   <div class="wrapper">
     <div class="footer-links">
-        
-      {%- assign current_page_url = page.url | relative_url -%}
-
-      <span class="p-name footer-text">
-        日々鳥景アーカイブ
-      </span>
-
-          <a class="p-name" 
-   href="https://tmasumolikebirds96gm-lang.github.io/my-first-portfolio/" 
-   target="_blank"  
-   rel="noopener noreferrer">
-  ポートフォリオ HPはこちら
-</a>  
-
+      <span style="letter-spacing: 0.1em;">{{ site.title }}</span>
+      <a href="{{ '/posts/' | relative_url }}">記事一覧</a>
+      <a href="https://tmasumolikebirds96gm-lang.github.io/masaya-toyofuku/" target="_blank">ポートフォリオHPへ</a>
     </div>
-    <div class="footer-col-wrapper">
-      </div>
-    
+
     <div class="copyright-text">
-      <small>
-        &copy; {{ site.time | date: "%Y" }} {{ site.title | escape }} All Rights Reserved. 
-        <span class="no-reprint-footer">
-          🚫 無断転載禁止 / Unauthorized reproduction prohibited 🚫
-        </span>
-      </small>
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All Rights Reserved.</p>
+      <p style="margin-top: 15px; color: #e74c3c; font-weight: 700;">
+        🚫 無断転載禁止 / Unauthorized reproduction prohibited 🚫
+      </p>
     </div>
   </div>
 </footer>

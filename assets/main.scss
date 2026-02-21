@@ -1,85 +1,47 @@
 ---
 ---
-
-@import "minima";
-@import "custom-style";
-
-/* ==========================================
-   1. PC版：改行と回り込みの解決
-   ========================================== */
-.home-intro {
-  clear: both !important;
-  display: block;
-  margin: 40px auto;
-  width: 100%;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: #f9f7f2;
+  color: #1a1a1a;
+  font-family: serif;
+  overflow-y: scroll;
 }
 
-.intro-content p {
-  display: block !important;
-  margin-bottom: 1.6em !important;
-  line-height: 1.8;
+/* ヘッダー */
+.site-header { background: #fff; border-bottom: 1px solid #eee; padding: 25px 0; position: sticky; top: 0; z-index: 1000; }
+.header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; padding: 0 20px; }
+.site-title a { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: #000; letter-spacing: 0.2em; }
+.site-nav { position: absolute; right: 20px; }
+.site-nav a { margin-left: 20px; text-decoration: none; color: #888; font-size: 11px; font-weight: bold; }
+
+/* レイアウト全体 */
+.main-wrapper { max-width: 1100px; margin: 60px auto; padding: 0 30px; display: flex; gap: 60px; align-items: flex-start; }
+.posts-area { flex: 1; }
+
+/* 記事カード：余白なし設定 */
+.post-card {
+  display: flex; background: #fff; margin-bottom: 30px;
+  border-radius: 12px; overflow: hidden; height: 240px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-decoration: none; color: inherit;
+  transition: 0.3s;
 }
+.post-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+.post-info { flex: 1.2; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+.post-date { color: #aaa; font-size: 12px; margin-bottom: 12px; }
+.post-title { font-size: 1.4rem; font-weight: bold; }
 
-/* ==========================================
-   2. スマホ版：ズレ・重なり・ハミ出しを完全修正
-   ========================================== */
-@media screen and (max-width: 600px) {
-  
-  /* 画面全体の横揺れを防止 */
-  html, body {
-    overflow-x: hidden;
-  }
+/* 右側画像エリア：親カードの高さ(240px)に100%合わせる */
+.post-image { flex: 0.8; background: #eee; height: 100%; position: relative; }
+.post-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* ヘッダー：右寄りを直して中央に揃える */
-  .site-header .wrapper {
-    padding: 20px 10px !important;
-    min-height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
+/* 記事詳細の画像サイズ */
+.post-content img { max-width: 80%; height: auto; display: block; margin: 40px auto; }
 
-  /* サイトタイトル：位置を固定せず中央へ */
-  .site-title {
-    position: static !important;
-    float: none !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin: 0 0 10px 0 !important;
-    font-size: 1.4rem !important;
-  }
+/* サイドバー */
+.sidebar-profile { width: 280px; flex-shrink: 0; }
+.profile-card { background: #fff; padding: 50px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center; position: sticky; top: 120px; }
 
-  /* メニュー：タイトルの下に並べる */
-  .site-nav {
-    position: static !important;
-    float: none !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  .site-nav .trigger {
-    display: flex !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    gap: 10px !important;
-  }
-
-  /* 画像：画面からはみ出さないように強制 */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 10px auto !important; /* 画像を中央に */
-  }
-
-  /* 「このサイトについて」等のコンテンツ幅調整 */
-  .wrapper {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-}
+/* フッター */
+.site-footer { background: #1a1a1a; color: #fff; padding: 80px 0; text-align: center; margin-top: 100px; }
+.site-footer a { color: #bbb; text-decoration: none; margin: 0 10px; font-size: 0.8rem; }

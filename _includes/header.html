@@ -1,18 +1,14 @@
-<header class="site-header" role="banner">
-  <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      {% if site.subtitle %}
-        <span class="site-subtitle">{{ site.subtitle | escape }}</span>
-      {% endif %}
+<header class="site-header">
+  <div class="wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+    <a class="site-title" href="{{ "/" | relative_url }}">
       {{ site.title | escape }}
     </a>
-    
+
     <nav class="site-nav">
-      
       <div class="trigger">
-        {% for item in site.header_pages %}
-          <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-        {% endfor %}
+        {%- for path in site.header_pages -%}
+          <a class="page-link" href="{{ path.url | relative_url }}">{{ path.title }}</a>
+        {%- endfor -%}
       </div>
     </nav>
   </div>

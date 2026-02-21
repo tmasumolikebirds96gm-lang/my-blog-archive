@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-title"><a href="{{ "/" | relative_url }}">{{ site.title }}</a></div>
+      <nav class="site-nav">
+        <a href="{{ "/" | relative_url }}">HOME</a>
+        <a href="{{ "/archive.html" | relative_url }}">記事一覧</a>
+        <a href="{{ "/tags.html" | relative_url }}">タグ一覧</a>
+        <a href="{{ "/profile.html" | relative_url }}">プロフィール</a>
+      </nav>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer class="site-footer">
+    <div class="footer-links" style="margin-bottom: 15px;">
+      <a href="https://x.com/@suzume_l0718" target="_blank" rel="noopener">X (Twitter)</a>
+      <a href="https://tmasumolikebirds96gm-lang.github.io/masaya-toyofuku/" target="_blank" rel="noopener">PORTFOLIO</a>
+    </div>
+    <p style="font-size: 11px; opacity: 0.5;">&copy; 2026 {{ site.title }} / 🚫 無断転載禁止</p>
+  </footer>
+</body>
+</html>

@@ -1,22 +1,14 @@
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ page.title | escape }} | {{ site.title | escape }}</title>
-<meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="{{ page.title | escape }}" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="{{ page.description | default: site.description | escape }}" />
-<meta property="og:description" content="{{ page.description | default: site.description | escape }}" />
-<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}" />
-<meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" />
-<meta property="og:site_name" content="{{ site.title | escape }}" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="{{ page.title | escape }}" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"{{ site.description | escape }}","headline":"{{ site.title | escape }}","name":"{{ site.title | escape }}","url":"{{ site.url | escape }}"}</script>
-<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="{{ site.title | escape }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.style.opacity = "0";
+      document.body.style.transition = "opacity 0.6s ease-in-out";
+      setTimeout(() => { document.body.style.opacity = "1"; }, 100);
+    });
+  </script>
 </head>

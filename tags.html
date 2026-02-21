@@ -1,0 +1,23 @@
+---
+layout: default
+title: TAGS
+---
+<div class="main-wrapper" style="justify-content: center;">
+  <div style="max-width: 800px; width: 100%; text-align: center;">
+    <h1 style="font-size: 2rem; letter-spacing: 0.3em; margin-bottom: 50px;">TAGS</h1>
+
+    {% for tag in site.tags %}
+      <div style="margin-bottom: 60px;">
+        <h2 id="{{ tag[0] }}" style="font-size: 1.5rem; margin-bottom: 20px; display: inline-block; border-bottom: 1px solid #1a1a1a; padding-bottom: 5px;"># {{ tag[0] }}</h2>
+        <ul style="list-style: none; padding: 0;">
+          {% for post in tag[1] %}
+            <li style="margin-bottom: 15px;">
+              <span style="color: #aaa; font-size: 0.8rem; margin-right: 20px;">{{ post.date | date: "%Y.%m.%d" }}</span>
+              <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #1a1a1a; font-weight: bold;">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>

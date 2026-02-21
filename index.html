@@ -1,0 +1,154 @@
+---
+layout: default
+---
+
+<style>
+  /* --- 1. ヘッダー：中央寄せ・左右分離 --- */
+  header .wrapper, .site-header .wrapper {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 30px 20px !important;
+    box-sizing: border-box !important;
+  }
+  header .wrapper::before, header .wrapper::after { content: none !important; display: none !important; }
+
+  .site-title {
+    margin: 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #333 !important; 
+    letter-spacing: 0.1em;
+  }
+
+  .site-nav a {
+    font-weight: 700 !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+  }
+
+  /* --- 2. メインレイアウト：中身を画面中央に収める --- */
+  .cover-container {
+    background-color: #f7f4ed;
+    min-height: calc(100vh - 85px); /* ヘッダー分を除いた全画面 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 上下中央に配置して突き出しを防止 */
+    align-items: center;
+    padding: 20px 0 60px 0;
+    box-sizing: border-box;
+  }
+
+  /* --- 3. 画像：黄金サイズ（380/440px）とフェードイン --- */
+  .image-hero-area {
+    display: flex;
+    gap: 15px;
+    width: 95%;
+    max-width: 950px;
+    margin-bottom: 30px;
+    align-items: flex-end;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: simpleFade 1.2s forwards ease-out;
+  }
+
+  .img-wrap {
+    background: #d1cdc2;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
+  }
+
+  .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .side-img { flex: 1; height: 380px; }
+  .main-img { flex: 1.1; height: 440px; }
+
+  /* --- 4. エントランスの箱：フェードイン演出 --- */
+  .entrance-gate {
+    padding: 60px 80px;
+    background-color: #eeeae1;
+    border: 1px solid #dcd8cd;
+    border-radius: 30px;
+    max-width: 750px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.03);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: simpleFade 1.2s forwards ease-out;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes simpleFade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .entrance-title {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 25px;
+    color: #444;
+  }
+
+  .entrance-text {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+    line-height: 2.2;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  /* --- 5. ボタン：洗練されたラインデザイン --- */
+  .pro-button {
+    position: relative;
+    display: inline-block;
+    padding: 16px 60px;
+    border: 1px solid #1a1a1a;
+    border-radius: 50px;
+    text-decoration: none !important;
+    color: #1a1a1a !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.4s;
+  }
+
+  .pro-button::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -101%;
+    width: 100%; height: 100%;
+    background: #1a1a1a;
+    transition: left 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+  }
+
+  .pro-button:hover { color: #f7f4ed !important; }
+  .pro-button:hover::before { left: 0; }
+</style>
+
+<div class="cover-container">
+  <div class="image-hero-area">
+    <div class="img-wrap side-img"><img src="{{ '/assets/images/cover1.jpg' | relative_url }}"></div>
+    <div class="img-wrap main-img"><img src="{{ '/assets/images/cover2.jpg' | relative_url }}"></div>
+    <div class="img-wrap side-img"><img src="{{ '/assets/images/cover3.jpg' | relative_url }}"></div>
+  </div>
+
+  <div class="entrance-gate">
+    <h2 class="entrance-title">日々鳥景アーカイブ</h2>
+    <p class="entrance-text">ここは、過ぎ去る時間を丁寧に綴じ込めたデジタル書庫。</p>
+    <a href="{{ '/recent/' | relative_url }}" class="pro-button">ARCHIVE ENTRANCE</a>
+  </div>
+</div>

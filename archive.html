@@ -1,0 +1,46 @@
+---
+layout: default
+title: 記事一覧
+---
+<div class="main-wrapper">
+  <main class="posts-area">
+    <div style="display: flex; gap: 15px; margin-bottom: 40px;">
+      <a href="#latest" style="text-decoration: none; color: #1a1a1a; border: 1px solid #1a1a1a; padding: 8px 18px; border-radius: 20px; font-size: 11px; letter-spacing: 0.1em;">↓ LATEST (最新)</a>
+      <a href="#oldest" style="text-decoration: none; color: #1a1a1a; border: 1px solid #1a1a1a; padding: 8px 18px; border-radius: 20px; font-size: 11px; letter-spacing: 0.1em;">↓ OLDEST (最古)</a>
+    </div>
+
+    <div id="latest" style="margin-bottom: 30px; opacity: 0.4; letter-spacing: 0.3em; font-size: 0.8rem;">ALL POSTS</div>
+    
+    {% for post in site.posts %}
+      {% assign currentdate = post.date | date: "%Y" %}
+      {% if currentdate != nextdate %}
+        <div class="year-divider" style="margin: 60px 0 30px; display: flex; align-items: center; gap: 20px;">
+          <span style="font-size: 1.5rem; font-weight: 200; letter-spacing: 0.2em; color: #1a1a1a;">{{ currentdate }}</span>
+          <div style="flex: 1; height: 1px; background: linear-gradient(to right, #eee, transparent);"></div>
+        </div>
+        {% assign nextdate = currentdate %}
+      {% endif %}
+
+      <a href="{{ post.url | relative_url }}" class="post-card" {% if forloop.last %}id="oldest"{% endif %}>
+        <div class="post-info">
+          <span class="post-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          <h3 class="post-title">{{ post.title }}</h3>
+        </div>
+        <div class="post-image">
+          {% if post.image %}<img src="{{ post.image | relative_url }}">{% endif %}
+        </div>
+      </a>
+    {% endfor %}
+
+    <div style="text-align: center; margin-top: 80px;">
+      <a href="#" style="text-decoration: none; color: #aaa; font-size: 11px; letter-spacing: 0.2em;">↑ BACK TO TOP</a>
+    </div>
+  </main>
+
+  <aside class="sidebar-profile">
+    <div class="profile-card">
+      <span class="profile-name">記事一覧</span>
+      <p class="profile-phrase">日常を記録する場所</p>
+    </div>
+  </aside>
+</div>
